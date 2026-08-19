@@ -42,15 +42,14 @@
 
 ---
 
-## ✨ Tech Stack & Architecture Highlights
+## ⚡️ Key Features
 
-- ⚙️ **Low-Level C Kernel Core**: Direct Mach host kernel calls (`host_processor_info`), `IOKit`, and `IOReport` private frameworks written in high-performance C for sub-millisecond telemetry sampling.
-- 🎨 **Swift & SwiftUI Presentation**: Modern native macOS UI rendering with Metal hardware acceleration, dynamic light/dark mode adaptation, and zero frame stutter.
-- 🔬 **Interactive Hardware & SoC Floorplan**: Accurate visual representation of Mac chip topology (Performance Cores, Efficiency Cores, Intel hyper-threads, GPU Execution Units, Neural Engine, Media Engine, Cache, and Memory Controllers).
-- ⚡️ **Per-Core Precision**: Real-time load indicators for every individual core (`P0`..`P3`+, `E0`..`E5`+, `G0`..`G9`+).
-- 🧠 **Neural Engine & Media Engine Telemetry**: Monitor duty cycles on the 16-core Apple Neural Engine (ANE) and hardware video acceleration engines.
-- 📈 **Real-Time Power & Wattage Trend**: Live package power consumption (`W`) sparkline tracking dynamic power fluctuations.
-- 🪶 **Ultra-Low Overhead**: Zero-dependency native binary sampling kernel stats with `< 0.5%` CPU impact.
+- ⚙️ **Real-Time C Kernel Telemetry**: Low-level C engine directly communicates with hardware registers, `IOKit`, and Mach kernel sensors for zero-latency, sub-millisecond metric extraction.
+- 🧠 **Unified Memory Architecture (UMA / RAM)**: Real-time memory controller bandwidth and System Level Cache (SLC) monitoring routing traffic between CPU, GPU, and ANE.
+- 🔬 **Interactive CPU & GPU Die Floorplan**: Live visual breakdown of Performance Cores (`P0`..`P3`+), Efficiency Cores (`E0`..`E5`+), and GPU Execution Unit clusters (`G0`..`G9`+).
+- 🌡️ **Thermals, Wattage & Power Sparkline**: Real-time package power draw (`W`), dynamic wattage scaling, and historical trend graph.
+- 🤖 **Neural Engine & Media Engine Tracking**: Duty cycle telemetry for Apple Neural Engine (16-Core ANE) AI matrix hardware and video encode/decode blocks.
+- 🪶 **Ultra-Low Overhead**: Native zero-dependency binary running with `< 0.5%` CPU utilization.
 
 ---
 
