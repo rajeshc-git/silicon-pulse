@@ -1,51 +1,68 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="100%" height="100%">
   <defs>
-    <!-- Background Gradient -->
+    <!-- Light Mode Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B0F19" />
-      <stop offset="50%" stop-color="#111827" />
-      <stop offset="100%" stop-color="#030712" />
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="50%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#E2E8F0" />
     </linearGradient>
 
-    <!-- Chip Neon Gradient -->
-    <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3B82F6" />
-      <stop offset="50%" stop-color="#6366F1" />
-      <stop offset="100%" stop-color="#8B5CF6" />
+    <!-- Chip Outer Ring Gradient -->
+    <linearGradient id="chipBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94A3B8" />
+      <stop offset="50%" stop-color="#CBD5E1" />
+      <stop offset="100%" stop-color="#64748B" />
     </linearGradient>
 
-    <!-- Pulse Line Gradient -->
+    <!-- Subsystem Fills matching the actual app screenshot -->
+    <!-- P-Cores: Soft Vibrant Blue -->
+    <linearGradient id="pCoreGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+
+    <!-- E-Cores: Mint Green -->
+    <linearGradient id="eCoreGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6EE7B7" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+
+    <!-- Neural Engine: Soft Lavender / Purple -->
+    <linearGradient id="aneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E9D5FF" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+
+    <!-- Media Engine & Cache: Crisp Slate -->
+    <linearGradient id="cacheGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+
+    <!-- Pulse Sparkline Gradient -->
     <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.2"/>
-      <stop offset="30%" stop-color="#38BDF8" stop-opacity="1"/>
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.3"/>
+      <stop offset="30%" stop-color="#2563EB" stop-opacity="1"/>
       <stop offset="50%" stop-color="#F59E0B" stop-opacity="1"/>
       <stop offset="70%" stop-color="#10B981" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.3"/>
     </linearGradient>
 
-    <!-- Glow Filter -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <!-- Subtle Soft Drop Shadows -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.08" />
     </filter>
-
-    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    
+    <filter id="tileShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.06" />
     </filter>
   </defs>
 
-  <!-- Background Rounded Canvas -->
-  <rect width="800" height="220" rx="20" fill="url(#bgGrad)" stroke="#1F2937" stroke-width="2"/>
+  <!-- Light Mode Card Background -->
+  <rect width="800" height="220" rx="20" fill="url(#bgGrad)" stroke="#CBD5E1" stroke-width="1.5" filter="url(#softShadow)"/>
 
-  <!-- Circuit grid pattern lines in background -->
-  <g stroke="#1E293B" stroke-width="1" opacity="0.4">
+  <!-- Subtle Light Grid Pattern -->
+  <g stroke="#E2E8F0" stroke-width="1" opacity="0.6">
     <line x1="40" y1="40" x2="760" y2="40" stroke-dasharray="4,8"/>
     <line x1="40" y1="110" x2="760" y2="110" stroke-dasharray="4,8"/>
     <line x1="40" y1="180" x2="760" y2="180" stroke-dasharray="4,8"/>
@@ -54,92 +71,78 @@
     <line x1="640" y1="20" x2="640" y2="200" stroke-dasharray="4,8"/>
   </g>
 
-  <!-- Silicon Chip Icon -->
-  <g transform="translate(60, 45)">
-    <!-- Outer Chip Body -->
-    <rect x="0" y="0" width="130" height="130" rx="18" fill="#1E293B" stroke="url(#chipGrad)" stroke-width="2.5" filter="url(#glow)"/>
+  <!-- Silicon Chip Graphic (Light Mode Native Apple Die Aesthetic) -->
+  <g transform="translate(55, 40)" filter="url(#softShadow)">
+    <!-- Outer Chip Frame -->
+    <rect x="0" y="0" width="140" height="140" rx="16" fill="#FFFFFF" stroke="url(#chipBorder)" stroke-width="2"/>
     
-    <!-- Die Grid Inner Layer -->
-    <rect x="12" y="12" width="106" height="106" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+    <!-- Die Inner Border -->
+    <rect x="10" y="10" width="120" height="120" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
     
-    <!-- Die Sub-units (P-Cores, E-Cores, GPU, ANE) -->
-    <!-- P-Cores (Blue) -->
-    <rect x="20" y="20" width="22" height="22" rx="4" fill="#3B82F6" fill-opacity="0.85"/>
-    <rect x="46" y="20" width="22" height="22" rx="4" fill="#3B82F6" fill-opacity="0.6"/>
-    <!-- GPU (Purple) -->
-    <rect x="74" y="20" width="36" height="48" rx="4" fill="#8B5CF6" fill-opacity="0.75"/>
-    <!-- E-Cores (Green) -->
-    <rect x="20" y="48" width="22" height="20" rx="4" fill="#10B981" fill-opacity="0.8"/>
-    <rect x="46" y="48" width="22" height="20" rx="4" fill="#10B981" fill-opacity="0.5"/>
-    <!-- Neural Engine (Amber) -->
-    <rect x="20" y="74" width="48" height="32" rx="4" fill="#F59E0B" fill-opacity="0.8"/>
-    <!-- Cache / SLC (Indigo) -->
-    <rect x="74" y="74" width="36" height="32" rx="4" fill="#6366F1" fill-opacity="0.85"/>
+    <!-- Die Sub-components matching SiliconPulse UI -->
+    <!-- Memory Controllers (Sides) -->
+    <rect x="15" y="15" width="14" height="52" rx="3" fill="url(#cacheGrad)" stroke="#94A3B8" stroke-width="0.5"/>
+    <rect x="15" y="73" width="14" height="52" rx="3" fill="url(#cacheGrad)" stroke="#94A3B8" stroke-width="0.5"/>
+    <rect x="111" y="15" width="14" height="52" rx="3" fill="url(#cacheGrad)" stroke="#94A3B8" stroke-width="0.5"/>
+    <rect x="111" y="73" width="14" height="52" rx="3" fill="url(#cacheGrad)" stroke="#94A3B8" stroke-width="0.5"/>
 
-    <!-- Chip Pins / Connectors -->
-    <g stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.8">
-      <!-- Top Pins -->
-      <line x1="30" y1="0" x2="30" y2="-6"/>
-      <line x1="50" y1="0" x2="50" y2="-6"/>
-      <line x1="70" y1="0" x2="70" y2="-6"/>
-      <line x1="90" y1="0" x2="90" y2="-6"/>
-      <line x1="110" y1="0" x2="110" y2="-6"/>
-      <!-- Bottom Pins -->
-      <line x1="30" y1="130" x2="30" y2="136"/>
-      <line x1="50" y1="130" x2="50" y2="136"/>
-      <line x1="70" y1="130" x2="70" y2="136"/>
-      <line x1="90" y1="130" x2="90" y2="136"/>
-      <line x1="110" y1="130" x2="110" y2="136"/>
-      <!-- Left Pins -->
-      <line x1="0" y1="30" x2="-6" y2="30"/>
-      <line x1="0" y1="50" x2="-6" y2="50"/>
-      <line x1="0" y1="70" x2="-6" y2="70"/>
-      <line x1="0" y1="90" x2="-6" y2="90"/>
-      <line x1="0" y1="110" x2="-6" y2="110"/>
-      <!-- Right Pins -->
-      <line x1="130" y1="30" x2="136" y2="30"/>
-      <line x1="130" y1="50" x2="136" y2="50"/>
-      <line x1="130" y1="70" x2="136" y2="70"/>
-      <line x1="130" y1="90" x2="136" y2="90"/>
-      <line x1="130" y1="110" x2="136" y2="110"/>
-    </g>
+    <!-- Neural Engine ANE (16-Core) -->
+    <rect x="33" y="15" width="30" height="52" rx="4" fill="url(#aneGrad)" stroke="#A855F7" stroke-width="0.5" filter="url(#tileShadow)"/>
+
+    <!-- Media Engine -->
+    <rect x="33" y="73" width="30" height="52" rx="4" fill="url(#cacheGrad)" stroke="#94A3B8" stroke-width="0.5"/>
+
+    <!-- P-Cores (Performance) -->
+    <rect x="67" y="15" width="18" height="24" rx="3" fill="url(#pCoreGrad)" filter="url(#tileShadow)"/>
+    <rect x="88" y="15" width="18" height="24" rx="3" fill="url(#pCoreGrad)" filter="url(#tileShadow)"/>
+    <rect x="67" y="42" width="18" height="24" rx="3" fill="url(#pCoreGrad)" opacity="0.85" filter="url(#tileShadow)"/>
+    <rect x="88" y="42" width="18" height="24" rx="3" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="0.5"/>
+
+    <!-- E-Cores (Efficiency) -->
+    <rect x="67" y="73" width="11" height="24" rx="2" fill="url(#eCoreGrad)"/>
+    <rect x="80" y="73" width="11" height="24" rx="2" fill="url(#eCoreGrad)"/>
+    <rect x="93" y="73" width="13" height="24" rx="2" fill="url(#eCoreGrad)" opacity="0.7"/>
+
+    <rect x="67" y="101" width="11" height="24" rx="2" fill="url(#eCoreGrad)" opacity="0.6"/>
+    <rect x="80" y="101" width="11" height="24" rx="2" fill="url(#eCoreGrad)" opacity="0.5"/>
+    <rect x="93" y="101" width="13" height="24" rx="2" fill="url(#eCoreGrad)" opacity="0.4"/>
   </g>
 
-  <!-- Typography: SILICON PULSE -->
+  <!-- Title & Typography: SiliconPulse -->
   <g transform="translate(230, 85)">
-    <text font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="800" letter-spacing="1">
-      <tspan fill="#FFFFFF">Silicon</tspan>
-      <tspan fill="#38BDF8" filter="url(#subtleGlow)">Pulse</tspan>
+    <text font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="800" letter-spacing="-0.5">
+      <tspan fill="#0F172A">Silicon</tspan>
+      <tspan fill="#2563EB">Pulse</tspan>
     </text>
   </g>
 
-  <!-- Subtitle / Tagline -->
-  <g transform="translate(232, 120)">
-    <text font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="500" fill="#94A3B8" letter-spacing="0.5">
-      Real-Time Apple Silicon SoC Architecture &amp; Die Telemetry Visualizer
+  <!-- Tagline / Subtitle -->
+  <g transform="translate(232, 118)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="500" fill="#475569" letter-spacing="0.2">
+      Real-Time Apple Silicon &amp; Intel Mac Telemetry Visualizer
     </text>
   </g>
 
-  <!-- Live Pulse Line Sparkline -->
+  <!-- Sparkline Trend Indicator (Light Mode Style) -->
   <g transform="translate(232, 140)">
     <!-- Background Track -->
-    <path d="M 0 25 L 120 25 L 140 10 L 155 38 L 170 5 L 185 30 L 200 25 L 340 25 L 355 12 L 370 35 L 385 18 L 400 25 L 500 25" 
-          fill="none" stroke="#1E293B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 0 25 L 120 25 L 140 10 L 155 38 L 170 5 L 185 30 L 200 25 L 340 25 L 355 12 L 370 35 L 385 18 L 400 25 L 490 25" 
+          fill="none" stroke="#E2E8F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     <!-- Glowing Pulse Line -->
-    <path d="M 0 25 L 120 25 L 140 10 L 155 38 L 170 5 L 185 30 L 200 25 L 340 25 L 355 12 L 370 35 L 385 18 L 400 25 L 500 25" 
-          fill="none" stroke="url(#pulseGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#subtleGlow)"/>
-    <!-- Live Pulse Dot -->
-    <circle cx="170" cy="5" r="4" fill="#38BDF8" filter="url(#glow)"/>
-    <circle cx="370" cy="35" r="3.5" fill="#F59E0B" filter="url(#glow)"/>
+    <path d="M 0 25 L 120 25 L 140 10 L 155 38 L 170 5 L 185 30 L 200 25 L 340 25 L 355 12 L 370 35 L 385 18 L 400 25 L 490 25" 
+          fill="none" stroke="url(#pulseGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Active Pulse Indicator Nodes -->
+    <circle cx="170" cy="5" r="4" fill="#2563EB"/>
+    <circle cx="370" cy="35" r="3.5" fill="#F59E0B"/>
   </g>
 
-  <!-- Pill Badges -->
+  <!-- Light Mode Pill Badges -->
   <g transform="translate(560, 48)">
-    <rect x="0" y="0" width="85" height="24" rx="12" fill="#1E293B" stroke="#3B82F6" stroke-width="1"/>
-    <text x="42.5" y="16" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#60A5FA" text-anchor="middle">Apple M4</text>
+    <rect x="0" y="0" width="85" height="24" rx="12" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.2" filter="url(#tileShadow)"/>
+    <text x="42.5" y="16" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#1D4ED8" text-anchor="middle">Apple M4</text>
   </g>
   <g transform="translate(655, 48)">
-    <rect x="0" y="0" width="75" height="24" rx="12" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
-    <text x="37.5" y="16" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#34D399" text-anchor="middle">macOS 13+</text>
+    <rect x="0" y="0" width="85" height="24" rx="12" fill="#FFFFFF" stroke="#10B981" stroke-width="1.2" filter="url(#tileShadow)"/>
+    <text x="42.5" y="16" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">macOS 13+</text>
   </g>
 </svg>
