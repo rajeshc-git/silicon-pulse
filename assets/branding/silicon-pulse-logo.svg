@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+
+    <!-- Chip Neon Gradient -->
+    <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+
+    <!-- Pulse Line Gradient -->
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.2"/>
+      <stop offset="30%" stop-color="#38BDF8" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#F59E0B" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#10B981" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Rounded Canvas -->
+  <rect width="800" height="220" rx="20" fill="url(#bgGrad)" stroke="#1F2937" stroke-width="2"/>
+
+  <!-- Circuit grid pattern lines in background -->
+  <g stroke="#1E293B" stroke-width="1" opacity="0.4">
+    <line x1="40" y1="40" x2="760" y2="40" stroke-dasharray="4,8"/>
+    <line x1="40" y1="110" x2="760" y2="110" stroke-dasharray="4,8"/>
+    <line x1="40" y1="180" x2="760" y2="180" stroke-dasharray="4,8"/>
+    <line x1="160" y1="20" x2="160" y2="200" stroke-dasharray="4,8"/>
+    <line x1="400" y1="20" x2="400" y2="200" stroke-dasharray="4,8"/>
+    <line x1="640" y1="20" x2="640" y2="200" stroke-dasharray="4,8"/>
+  </g>
+
+  <!-- Silicon Chip Icon -->
+  <g transform="translate(60, 45)">
+    <!-- Outer Chip Body -->
+    <rect x="0" y="0" width="130" height="130" rx="18" fill="#1E293B" stroke="url(#chipGrad)" stroke-width="2.5" filter="url(#glow)"/>
+    
+    <!-- Die Grid Inner Layer -->
+    <rect x="12" y="12" width="106" height="106" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+    
+    <!-- Die Sub-units (P-Cores, E-Cores, GPU, ANE) -->
+    <!-- P-Cores (Blue) -->
+    <rect x="20" y="20" width="22" height="22" rx="4" fill="#3B82F6" fill-opacity="0.85"/>
+    <rect x="46" y="20" width="22" height="22" rx="4" fill="#3B82F6" fill-opacity="0.6"/>
+    <!-- GPU (Purple) -->
+    <rect x="74" y="20" width="36" height="48" rx="4" fill="#8B5CF6" fill-opacity="0.75"/>
+    <!-- E-Cores (Green) -->
+    <rect x="20" y="48" width="22" height="20" rx="4" fill="#10B981" fill-opacity="0.8"/>
+    <rect x="46" y="48" width="22" height="20" rx="4" fill="#10B981" fill-opacity="0.5"/>
+    <!-- Neural Engine (Amber) -->
+    <rect x="20" y="74" width="48" height="32" rx="4" fill="#F59E0B" fill-opacity="0.8"/>
+    <!-- Cache / SLC (Indigo) -->
+    <rect x="74" y="74" width="36" height="32" rx="4" fill="#6366F1" fill-opacity="0.85"/>
+
+    <!-- Chip Pins / Connectors -->
+    <g stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.8">
+      <!-- Top Pins -->
+      <line x1="30" y1="0" x2="30" y2="-6"/>
+      <line x1="50" y1="0" x2="50" y2="-6"/>
+      <line x1="70" y1="0" x2="70" y2="-6"/>
+      <line x1="90" y1="0" x2="90" y2="-6"/>
+      <line x1="110" y1="0" x2="110" y2="-6"/>
+      <!-- Bottom Pins -->
+      <line x1="30" y1="130" x2="30" y2="136"/>
+      <line x1="50" y1="130" x2="50" y2="136"/>
+      <line x1="70" y1="130" x2="70" y2="136"/>
+      <line x1="90" y1="130" x2="90" y2="136"/>
+      <line x1="110" y1="130" x2="110" y2="136"/>
+      <!-- Left Pins -->
+      <line x1="0" y1="30" x2="-6" y2="30"/>
+      <line x1="0" y1="50" x2="-6" y2="50"/>
+      <line x1="0" y1="70" x2="-6" y2="70"/>
+      <line x1="0" y1="90" x2="-6" y2="90"/>
+      <line x1="0" y1="110" x2="-6" y2="110"/>
+      <!-- Right Pins -->
+      <line x1="130" y1="30" x2="136" y2="30"/>
+      <line x1="130" y1="50" x2="136" y2="50"/>
+      <line x1="130" y1="70" x2="136" y2="70"/>
+      <line x1="130" y1="90" x2="136" y2="90"/>
+      <line x1="130" y1="110" x2="136" y2="110"/>
+    </g>
+  </g>
+
+  <!-- Typography: SILICON PULSE -->
+  <g transform="translate(230, 85)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="800" letter-spacing="1">
+      <tspan fill="#FFFFFF">Silicon</tspan>
+      <tspan fill="#38BDF8" filter="url(#subtleGlow)">Pulse</tspan>
+    </text>
+  </g>
+
+  <!-- Subtitle / Tagline -->
+  <g transform="translate(232, 120)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="500" fill="#94A3B8" letter-spacing="0.5">
+      Real-Time Apple Silicon SoC Architecture &amp; Die Telemetry Visualizer
+    </text>
+  </g>
+
+  <!-- Live Pulse Line Sparkline -->
+  <g transform="translate(232, 140)">
+    <!-- Background Track -->
+    <path d="M 0 25 L 120 25 L 140 10 L 155 38 L 170 5 L 185 30 L 200 25 L 340 25 L 355 12 L 370 35 L 385 18 L 400 25 L 500 25" 
+          fill="none" stroke="#1E293B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Glowing Pulse Line -->
+    <path d="M 0 25 L 120 25 L 140 10 L 155 38 L 170 5 L 185 30 L 200 25 L 340 25 L 355 12 L 370 35 L 385 18 L 400 25 L 500 25" 
+          fill="none" stroke="url(#pulseGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#subtleGlow)"/>
+    <!-- Live Pulse Dot -->
+    <circle cx="170" cy="5" r="4" fill="#38BDF8" filter="url(#glow)"/>
+    <circle cx="370" cy="35" r="3.5" fill="#F59E0B" filter="url(#glow)"/>
+  </g>
+
+  <!-- Pill Badges -->
+  <g transform="translate(560, 48)">
+    <rect x="0" y="0" width="85" height="24" rx="12" fill="#1E293B" stroke="#3B82F6" stroke-width="1"/>
+    <text x="42.5" y="16" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#60A5FA" text-anchor="middle">Apple M4</text>
+  </g>
+  <g transform="translate(655, 48)">
+    <rect x="0" y="0" width="75" height="24" rx="12" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+    <text x="37.5" y="16" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#34D399" text-anchor="middle">macOS 13+</text>
+  </g>
+</svg>

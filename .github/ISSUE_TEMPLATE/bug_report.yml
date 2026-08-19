@@ -1,0 +1,67 @@
+name: 🐛 Bug Report
+description: Report a defect, telemetry discrepancy, or crash in SiliconPulse
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue with SiliconPulse! Please fill out the form below as completely as possible.
+  - type: input
+    id: chip
+    attributes:
+      label: Apple Silicon Chip Model
+      description: What chip is your Mac running? (e.g. Apple M4, M3 Pro, M2 Max, M1 Ultra)
+      placeholder: Apple M4 (Mac16,10)
+    validations:
+      required: true
+  - type: dropdown
+    id: macos-version
+    attributes:
+      label: macOS Version
+      options:
+        - macOS Sequoia 15.x
+        - macOS Sonoma 14.x
+        - macOS Ventura 13.x
+        - macOS Tahoe / Newer
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: SiliconPulse Version
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+      placeholder: Core usage or wattage displays 0W under heavy workload...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps To Reproduce
+      description: How can maintainers reproduce this behavior?
+      value: |
+        1. Launch SiliconPulse.app
+        2. Open full-screen / windowed mode
+        3. Run a CPU/GPU intensive workload
+        4. See error...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or Logs
+      description: Drag and drop screenshots of the die floorplan or relevant Console.app logs.

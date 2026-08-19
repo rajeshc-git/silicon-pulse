@@ -1,0 +1,41 @@
+name: 💡 Feature Request or New Chip Floorplan
+description: Suggest an enhancement, new telemetry metric, or new Apple Silicon SoC die layout
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting improvements for SiliconPulse!
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Request Type
+      options:
+        - New Apple Silicon Chip / Die Floorplan Support
+        - UI & Animation Polish
+        - Additional Telemetry Metrics (ANE, Memory Bandwidth, Thermals)
+        - Menu Bar or HUD Widget Mode
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Is your feature request related to a problem or new hardware?
+      description: A clear and concise description of what problem or missing chip support this addresses.
+      placeholder: Apple released new M-series chips and the floorplan needs updating...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the Solution You'd Like
+      description: How should this feature look or function?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Attach reference diagrams, sysctl output, or mockups.
