@@ -9,34 +9,11 @@ Icon
 
 # Xcode & Swift Build Files
 .build/
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-*.xcworkspace/*
-!*.xcworkspace/contents.xcworkspacedata
-!*.xcworkspace/xcshareddata/
-xcuserdata/
 DerivedData/
 *.xcuserstate
 *.xcbkptlist
-
-# Swift Package Manager
-Packages/
-Package.pins
-Package.resolved
 .swiftpm/xcode/
 
-# Archives & Distribution Binaries
-# (Release DMGs should be uploaded to GitHub Releases rather than stored in repo root)
-*.dmg
-*.zip
-*.tar.gz
-*.pkg
-*.app
-
-# Local environment & scratch files
-.env
-.env.local
-*.local
+# Local Scratch
 scratch/
 tmp/
