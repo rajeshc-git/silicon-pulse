@@ -7,14 +7,14 @@
 
 [![macOS](https://img.shields.io/badge/macOS-13.0%2B-black?style=for-the-badge&logo=apple&logoColor=white)](https://apple.com)
 [![Apple Silicon](https://img.shields.io/badge/Apple_Silicon-M1_|_M2_|_M3_|_M4-007AFF?style=for-the-badge&logo=apple&logoColor=white)](https://apple.com)
-[![Universal Binary](https://img.shields.io/badge/Architecture-Universal_Binary-34C759?style=for-the-badge&logo=apple&logoColor=white)](SiliconPulse-v1.0.0.dmg)
+[![Universal Binary](https://img.shields.io/badge/Architecture-Universal_Binary-34C759?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/rajeshc-git/silicon-pulse/raw/main/SiliconPulse-v1.0.0.dmg)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 <p align="center">
   <b>SiliconPulse</b> brings your Apple Silicon System-on-Chip (SoC) to life. Watch live CPU cores, GPU clusters, Apple Neural Engine (ANE), cache subsystems, and power draw animate dynamically directly on an interactive chip floorplan.
 </p>
 
-### 📥 [**Download SiliconPulse-v1.0.0.dmg (3.3 MB)**](SiliconPulse-v1.0.0.dmg?raw=true)
+### 📥 [**Download SiliconPulse-v1.0.0.dmg (3.3 MB)**](https://github.com/rajeshc-git/silicon-pulse/raw/main/SiliconPulse-v1.0.0.dmg)
 
 ---
 
@@ -45,7 +45,7 @@
 - 🧠 **Neural Engine & Media Engine Telemetry**: Monitor duty cycles on the 16-core Apple Neural Engine (ANE) and hardware video acceleration engines.
 - 📈 **Real-Time Power & Wattage Trend**: Live package power consumption (`W`) sparkline tracking dynamic power fluctuations.
 - 🪶 **Ultra-Low Overhead**: Native Swift & SwiftUI telemetry loop sampling kernel stats with `< 0.5%` CPU utilization.
-- 🎨 **macOS Native Aesthetics**: Smooth glassmorphic design supporting macOS Light and Dark appearance seamlessly.
+- 🎨 **macOS Native Aesthetics**: Smooth glassmorphism design supporting macOS Light and Dark appearance seamlessly.
 
 ---
 
@@ -62,7 +62,7 @@
 
 ## 🚀 Installation & Quick Start
 
-1. Download **[SiliconPulse-v1.0.0.dmg](SiliconPulse-v1.0.0.dmg?raw=true)** (3.3 MB) directly from this repository.
+1. Click **[Download SiliconPulse-v1.0.0.dmg](https://github.com/rajeshc-git/silicon-pulse/raw/main/SiliconPulse-v1.0.0.dmg)** (3.3 MB).
 2. Double-click to open the DMG.
 3. Drag **SiliconPulse.app** into your `/Applications` folder and launch!
 
