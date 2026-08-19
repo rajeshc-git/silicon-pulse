@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/branding/silicon-pulse-logo.svg" alt="SiliconPulse Banner" width="100%" />
+<img src="https://raw.githubusercontent.com/rajeshc-git/silicon-pulse/main/assets/branding/silicon-pulse-logo.svg?v=3" alt="SiliconPulse Banner" width="100%" />
 
 # SiliconPulse ⚡️
 ### Real-Time Apple Silicon & Intel Mac Hardware Telemetry Visualizer for macOS
